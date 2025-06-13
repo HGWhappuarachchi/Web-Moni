@@ -1,86 +1,130 @@
-NetMoni - Network Latency Monitor
-A modern desktop application for monitoring network device latency with a visual dashboard, pop-out widgets, and automated email alerts.
+Of course. A great `README.md` is essential for any project on GitHub. It serves as the front page, explaining what the project does, how to use it, and how to get it running.
 
-(Feel free to replace the image link above with a screenshot of your own application)
+Here is a comprehensive `README.md` file tailored for your NetMoni application. This is based on the final, feature-complete `CustomTkinter` version of the application.
 
-About The Project
-NetMoni was created to provide a simple yet powerful solution for IT professionals and tech enthusiasts who need to keep a constant eye on the health of multiple network devices. Instead of using command-line tools, NetMoni offers an intuitive graphical dashboard with analog-style gauges that provide immediate, at-a-glance feedback on the latency of your servers, routers, and other critical IPs.
+-----
 
-With features like individual logging, pop-out widgets, and automated email alerts, NetMoni transforms reactive troubleshooting into proactive monitoring.
+### How to Use
 
-Features
-Live Latency Monitoring: Track multiple IP addresses simultaneously in real-time.
-Visual Analog Gauges: An intuitive dashboard displays each device's latency (in ms) on a dedicated gauge with color-coded health indicators (Green/Yellow/Red).
-Pop-out Desktop Widgets: Any gauge can be popped out into its own standalone window. These widgets feature:
-Persistent Positioning: Widgets remember their last location on your desktop.
-Draggable Grab Bar: A dedicated bar at the top of each widget allows for easy repositioning.
-Hover Opacity: Widgets are semi-transparent and become fully opaque when you mouse over them, keeping your desktop clean.
-Right-Click Widget Menu: Each desktop widget is fully controllable via a right-click menu:
-Resize: Instantly change the widget's size between Small, Medium, and Large presets.
-Keep on Top: Toggle whether the widget should always stay on top of other windows.
-Close: Close the widget and save its last known position and settings.
-Automated Email Alerts: Configure the app to send email notifications to a list of recipients via Office 365 when a device experiences 5 (or more) consecutive timeouts.
-Per-IP Logging: Every monitored device has its own dedicated log file stored in a logs folder, tracking every success, failure, and recovery event with a timestamp.
-In-App Log Viewer: View the detailed logs for any device directly from the main dashboard without needing to open text files manually.
-Full GUI Configuration: No code changes are needed after setup. All administrative tasks are handled through the UI:
-Manage IPs and their descriptions.
-Manage the list of email alert recipients.
-Securely configure the sender email account.
-Getting Started
-To get a local copy up and running, follow these simple steps.
+1.  In your project folder on your computer, create a new file named `README.md`.
+2.  Copy the entire content below and paste it into that new file.
+3.  When you push your project to GitHub, this file will be automatically displayed on your repository's main page.
 
-Prerequisites
-You need to have Python installed on your system. Then, install the required library using pip:
+-----
 
-Bash
+### `README.md`
 
-pip install customtkinter
-Running the Application
-The project consists of the following essential files:
+# NetMoni - Network Latency Monitor & Alerter
 
-main_app.py (The main application)
-database.py (Handles database creation and interaction)
-ctk_meter.py (The custom gauge widget)
-pinger.py (The ping logic)
-logger_setup.py (Handles individual log files)
-emailer.py (Handles sending alert emails)
-<!-- end list -->
+  
 
-Make sure all the .py files are in the same folder.
-Run the database.py script once to create and initialize the database file (monitor_app.db):
-Bash
+A modern, cross-platform desktop application for visually monitoring network device latency with pop-out widgets, a detailed dashboard, and automated email alerts.
 
-python database.py
-Run the main application:
-Bash
+\<br\>
 
-python main_app.py
-Usage
-First-Time Setup:
+## Table of Contents
 
-Launch the application.
-Click on "Settings" in the left sidebar.
-Use "Manage IPs to Monitor" to add the IP addresses you want to track.
-Use "Manage Alert Recipients" to add the email addresses that should receive alerts.
-Use "Configure Email Account" to enter your Office 365 sender email and an App Password for sending alerts.
-Monitoring:
+  - [About The Project](https://www.google.com/search?q=%23about-the-project)
+  - [Key Features](https://www.google.com/search?q=%23key-features)
+  - [Technology Stack](https://www.google.com/search?q=%23technology-stack)
+  - [Getting Started](https://www.google.com/search?q=%23getting-started)
+      - [Prerequisites](https://www.google.com/search?q=%23prerequisites)
+      - [Installation & Setup](https://www.google.com/search?q=%23installation--setup)
+  - [Usage](https://www.google.com/search?q=%23usage)
+  - [Compiling for Distribution](https://www.google.com/search?q=%23compiling-for-distribution)
 
-Click "Dashboard" to view the live status of all your configured IPs.
-Using Widgets:
+## About The Project
 
-Click the "Widget" button below any gauge to pop it out.
-Click and drag the gray bar at the top of the widget to move it.
-Right-click the widget to access options for resizing or pinning it on top.
-Compiling into an .exe (Optional)
-You can compile the entire project into a single NetMoni.exe file for easy distribution.
+NetMoni provides a simple yet powerful solution for IT professionals and tech enthusiasts who need to keep a constant eye on the health of multiple network devices. It replaces traditional command-line pinging with an intuitive graphical dashboard, featuring analog-style gauges that provide immediate, at-a-glance feedback on the latency of your servers, routers, and other critical IPs.
 
-Install the PyInstaller library:
-Bash
+With features like individual logging, pop-out desktop widgets, and automated email alerts for outages, NetMoni transforms reactive troubleshooting into proactive monitoring.
 
-pip install pyinstaller
-Place an icon file named icon.ico in your project folder.
-Run the following command in your terminal from the project directory:
-Bash
+## Key Features
 
-pyinstaller --onefile --windowed --name NetMoni --icon=icon.ico main_app.py
-The final NetMoni.exe will be located in the dist folder.
+  * **Live Latency Monitoring:** Track multiple IP addresses simultaneously in real-time using the system's native ping command.
+  * **Visual Analog Dashboard:** An intuitive main dashboard displays each monitored device as an analog gauge, showing latency in milliseconds and providing instant visual feedback on network health.
+  * **Pop-out Desktop Widgets:** Any gauge can be "popped out" into its own standalone desktop window for persistent monitoring.
+  * **Advanced Widget Customization:**
+      * **Persistent Positioning:** Widgets remember their last location on your desktop, saved directly to the database.
+      * **Draggable Grab Bar:** A dedicated bar at the top of each widget allows for easy and predictable repositioning.
+      * **Hover Opacity:** Widgets are semi-transparent by default and become fully opaque when you mouse over them, keeping your desktop clean.
+  * **Right-Click Widget Menu:** Each desktop widget is fully controllable via a right-click context menu offering:
+      * **Resize:** Instantly change the widget's size between Small, Medium, and Large presets.
+      * **Keep on Top:** Toggle whether the widget should always stay on top of other windows.
+      * **Close:** Close the widget and save its state.
+  * **Automated Email Alerts:** Configure the app to send email notifications via an Office 365 account to a list of recipients after a device experiences a set number of consecutive timeouts.
+  * **Per-IP Logging & In-App Viewer:** Every monitored device has its own dedicated log file stored in a `logs` folder. You can view the detailed logs for any device directly from the main dashboard.
+  * **Full GUI for Configuration:** All administrative tasks—managing IPs, alert recipients, and the sender email account—are handled through a simple and clear settings panel.
+
+## Technology Stack
+
+This project is built with Python and leverages the following key libraries:
+
+  * [**CustomTkinter**](https://github.com/TomSchimansky/CustomTkinter): For the modern graphical user interface.
+  * **SQLite3:** For all persistent data storage (part of the standard Python library).
+  * **Pillow:** For image handling with the system tray icon.
+  * **pystray:** For creating and managing the background system tray icon.
+
+## Getting Started
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+  * Python 3.8 or newer.
+  * `pip` for installing packages.
+
+### Installation & Setup
+
+1.  **Clone the repository (or download the files):**
+    ```sh
+    git clone https://github.com/your_username/NetMoni.git
+    cd NetMoni
+    ```
+2.  **Create a Virtual Environment (Recommended):**
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+3.  **Install Dependencies:**
+    ```sh
+    pip install customtkinter Pillow pystray
+    ```
+4.  **Initialize the Database:**
+    Before the first run, execute the database script to create the `monitor_app.db` file.
+    ```sh
+    python database.py
+    ```
+5.  **Run the Application:**
+    Launch the main application script. The app will start minimized in the system tray.
+    ```sh
+    python main_app.py
+    ```
+
+## Usage
+
+1.  **Launch the App:** After running `main_app.py`, find the NetMoni icon in your computer's system tray (near the clock).
+2.  **Open the Dashboard:** Right-click the tray icon and select "Show Dashboard".
+3.  **Configure:** In the dashboard window, click "Settings" on the sidebar to:
+      * Add IPs to monitor.
+      * Add user emails for alerts.
+      * Set up your Office 365 email credentials for sending alerts.
+4.  **Monitor:** Use the dashboard to view all gauges or click the "Widget" button on any gauge to pop it out onto your desktop for persistent viewing.
+
+## Compiling for Distribution
+
+You can compile the project into a single `NetMoni.exe` file for easy sharing and execution on other Windows machines.
+
+1.  **Install PyInstaller:**
+    ```sh
+    pip install pyinstaller
+    ```
+2.  **Prepare Icons:** Make sure you have two icon files in your project directory:
+      * `icon.ico`: For the `.exe` file itself.
+      * `icon.png`: For the system tray icon (Pillow works best with PNG).
+3.  **Run the Build Command:**
+    Open a terminal in your project directory and execute the following command:
+    ```sh
+    pyinstaller --onefile --windowed --name NetMoni --icon=icon.ico --add-data "icon.png;." main_app.py
+    ```
+4.  **Find Your Application:** The final `NetMoni.exe` will be located in the `dist` folder.
