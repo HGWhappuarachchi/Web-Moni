@@ -1,0 +1,44 @@
+==================================================
+ NetMoni - Release Notes
+==================================================
+
+Version: 1.0.0
+Release Date: June 13, 2025
+By Ganidu Hapuarachchi
+
+---
+
+### Introduction
+
+We are excited to announce the initial release of NetMoni v1.0.0, a desktop utility designed for network administrators, IT professionals, and tech enthusiasts to monitor network device latency in a simple, visual, and powerful way.
+
+### Key Features in This Release:
+
+* **Live Latency Monitoring:** Monitor multiple IP addresses simultaneously in real-time using ICMP pings.
+
+* **Visual Analog Dashboard:** An intuitive main dashboard displays each monitored device as an analog gauge, showing latency in milliseconds and providing instant visual feedback on network health (Green/Yellow/Red).
+
+* **Pop-Out Desktop Widgets:** Any gauge can be "popped out" into its own standalone desktop widget for persistent monitoring while you work.
+
+* **Advanced Widget Customization:**
+    * **Position Saving:** Widgets remember their last position on your desktop.
+    * **Resizable:** Right-click a widget to resize it to Small, Medium, or Large.
+    * **"Keep on Top" Toggle:** A right-click option allows you to pin a widget on top of all other windows or let it behave like a normal window.
+    * **Draggable & Interactive:** Widgets are semi-transparent when not in focus and can be easily moved via their dedicated grab-bar.
+
+* **Automated Email Alerts:** Configure the application to send email alerts via an Office 365 account to a list of recipients after a device fails a set number of consecutive pings.
+
+* **Centralized Admin Settings:** A simple settings panel allows an administrator to easily add/remove IPs to monitor, add/remove alert recipients, and configure the sender email account securely.
+
+* **Per-IP Logging:** Every monitored device has its own dedicated log file, tracking every success, failure, and recovery event with a timestamp.
+
+* **In-App Log Viewer:** View the detailed logs for any device directly from the main dashboard without needing to open the files manually.
+
+* **Standalone Application:** Compiled into a single `NetMoni.exe` file that requires no installation or external dependencies.
+
+### Known Limitations
+
+* Desktop widgets are tied to the main application and will close when the main app is closed.
+* On first run, some antivirus programs may flag the new executable as a potential threat (this is a common false positive for applications created with PyInstaller).
+
+---

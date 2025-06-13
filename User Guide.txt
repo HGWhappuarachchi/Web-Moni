@@ -1,0 +1,75 @@
+==================================================
+ NetMoni - User Guide
+==================================================
+
+### 1. Introduction
+
+Welcome to NetMoni! This application is designed to give you a clear, visual, and real-time overview of the network latency to your important devices like servers, routers, and other computers. It provides at-a-glance status on a central dashboard, pop-out desktop widgets, and automated email alerts for network outages.
+
+### 2. Getting Started
+
+**Installation**
+NetMoni is a portable application and requires no installation.
+
+1.  Place the `NetMoni.exe` file into a folder of your choice.
+2.  Double-click `NetMoni.exe` to run it.
+
+On its first run, the application will automatically create a `monitor_app.db` file (its database) and a `logs` folder in the same directory. Do not delete these files.
+
+### 3. The Main Dashboard
+
+The main window shows a dashboard of all the devices you are monitoring.
+
+* **Analog Gauges:** Each device is represented by a gauge. The needle shows the current ping latency in milliseconds (ms).
+* **Color Codes:** The arc of the gauge is colored for quick status checks:
+    * **Green:** Low latency (Good)
+    * **Yellow:** Medium latency (Okay/Warning)
+    * **Red:** High latency (Poor)
+* **Status Text:** The text inside the gauge will show the exact latency, "PENDING" on startup, or "TIMEOUT" if the device is unreachable.
+* **Action Buttons:** Below each gauge are two buttons:
+    * **View Log:** Opens a window showing the detailed event history for that specific device.
+    * **Widget:** Pops out the gauge into its own desktop widget.
+
+### 4. Settings & Configuration
+
+Click the "Settings" button in the sidebar to configure the application.
+
+* **Manage IPs to Monitor:**
+    * Opens a window where you can add or delete devices.
+    * To add, enter the IP address, a short description (e.g., "Main File Server"), and click "Add IP".
+    * To delete, simply click the "Delete" button next to an entry.
+
+* **Manage Alert Recipients:**
+    * Opens a window where you can add or delete email addresses.
+    * These are the users who will receive an email alert if a device goes down.
+
+* **Configure Email Account:**
+    * Opens a window to set up the sender email account. This must be an **Office 365** account.
+    * **Sender Email:** Your full Office 365 email address (e.g., admin@mycompany.com).
+    * **App Password:** For security, it is highly recommended to use an "App Password" instead of your regular account password, especially if you have Multi-Factor Authentication (MFA) enabled. You can generate an App Password in your Microsoft account security settings.
+
+### 5. Using Desktop Widgets
+
+Clicking the "Widget" button below any gauge on the dashboard will create a floating desktop widget for that device.
+
+* **Moving the Widget:** Click and drag the gray bar at the top of the widget to move it around your screen.
+* **Opacity:** The widget is semi-transparent by default. It will become fully opaque when you move your mouse over it.
+* **Right-Click Menu:** Right-click anywhere on the widget to open its control menu:
+    * **Resize:** Choose between Small, Medium, and Large sizes.
+    * **Keep on Top:** Check this option to make the widget stay on top of all other windows. Uncheck it to make it behave like a normal window.
+    * **Close Widget:** Closes the widget.
+
+The application will automatically save the position, size, and "Keep on Top" status for each widget when you close it or the main application.
+
+### 6. Troubleshooting
+
+* **I'm not receiving email alerts.**
+    * Double-check the credentials in the Email Configuration settings.
+    * Ensure you are using a correct App Password if you have MFA.
+    * Check if your network firewall is blocking outgoing traffic on port 587 (the SMTP port).
+    * Some organizations disable SMTP AUTH by default; you may need to enable it in your Office 365 admin center.
+
+* **My antivirus flagged the application.**
+    * This is a common false positive for new applications created with tools like PyInstaller. The application does not contain any malicious code. You may need to add an exception in your antivirus software for `NetMoni.exe`.
+
+---
