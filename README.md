@@ -1,19 +1,3 @@
-Of course. A great `README.md` is essential for any project on GitHub. It serves as the front page, explaining what the project does, how to use it, and how to get it running.
-
-Here is a comprehensive `README.md` file tailored for your NetMoni application. This is based on the final, feature-complete `CustomTkinter` version of the application.
-
------
-
-### How to Use
-
-1.  In your project folder on your computer, create a new file named `README.md`.
-2.  Copy the entire content below and paste it into that new file.
-3.  When you push your project to GitHub, this file will be automatically displayed on your repository's main page.
-
------
-
-### `README.md`
-
 # NetMoni - Network Latency Monitor & Alerter
 
   
